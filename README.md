@@ -30,7 +30,7 @@ Usuario
 - Gusto Secundario (series/peliculas)
 
 ## BD's
->[!INFO]
+>[!NOTE]
 >La base de datos con nombre FilmFlux se crea de forma automatica con el mysql de Laragon en el caso de que no se encuentre la base de datos
 
 >[!TIP]
