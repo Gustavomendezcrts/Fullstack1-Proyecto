@@ -20,3 +20,11 @@ Serie
 - Genero
 - Puntaje (1 - 10)
 - Temporadas (Cantidad)
+
+Usuario
+- id
+- nombre
+- email
+- contraseña
+- Gusto Principal (series/peliculas)
+- Gusto Secundario (series/peliculas)
