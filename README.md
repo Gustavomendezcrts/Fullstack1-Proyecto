@@ -1,7 +1,6 @@
 # FilmFlux
 ## Modelos
->[!NOTE]
->Pelicula
+>**Pelicula**
 >- Id
 >- IMDb
 >- Titulo
@@ -11,8 +10,7 @@
 >- Puntaje (1 - 10)
 
 
->[!NOTE]
->Serie
+>**Serie**
 >- Id
 >- IMDb
 >- Titulo
@@ -22,8 +20,7 @@
 >- Puntaje (1 - 10)
 >- Temporadas (Cantidad)
 
->[!NOTE]
->Usuario
+>**Usuario**
 >- Nd
 >- Nombre
 >- Email
