@@ -1,33 +1,35 @@
-# Proyecto Fullstack I
-## FilmFlux
+# FilmFlux
+## Modelos
+>[!NOTE]
+>Pelicula
+>- Id
+>- IMDb
+>- Titulo
+>- Director
+>- Fecha de estreno
+>- Genero
+>- Puntaje (1 - 10)
 
-### Modelos
-Pelicula
-- Id
-- IMDb
-- Titulo
-- Director
-- Fecha de estreno
-- Genero
-- Puntaje (1 - 10)
 
-Serie
-- Id
-- IMDb
-- Titulo
-- Director
-- Fecha de estreno
-- Genero
-- Puntaje (1 - 10)
-- Temporadas (Cantidad)
+>[!NOTE]
+>Serie
+>- Id
+>- IMDb
+>- Titulo
+>- Director
+>- Fecha de estreno
+>- Genero
+>- Puntaje (1 - 10)
+>- Temporadas (Cantidad)
 
-Usuario
-- id
-- nombre
-- email
-- contraseña
-- Gusto Principal (series/peliculas)
-- Gusto Secundario (series/peliculas)
+>[!NOTE]
+>Usuario
+>- Nd
+>- Nombre
+>- Email
+>- Contraseña
+>- Gusto Principal (serie/pelicula)
+>- Gusto Secundario (serie/pelicula)
 
 ## BD's
 >[!NOTE]
