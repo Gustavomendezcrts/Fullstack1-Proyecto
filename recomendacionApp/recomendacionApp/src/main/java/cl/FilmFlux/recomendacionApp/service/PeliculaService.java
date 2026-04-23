@@ -25,7 +25,7 @@ public class PeliculaService {
         return peliculaRepository.findById(id).orElse(null);
     }
 
-    public Pelicula updatPelicula(Pelicula peli){
+    public Pelicula updatePelicula(Pelicula peli){
         if(!peliculaRepository.existsById(peli.getId())){
             return null;
         }
