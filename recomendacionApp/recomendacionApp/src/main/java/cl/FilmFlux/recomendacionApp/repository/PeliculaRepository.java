@@ -4,6 +4,6 @@ import cl.FilmFlux.recomendacionApp.model.Pelicula;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-public class PeliculaRepository {
-    
+@Repository
+public class PeliculaRepository {  
 }
