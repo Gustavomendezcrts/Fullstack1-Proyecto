@@ -1,12 +1,8 @@
 package cl.FilmFlux.recomendacionApp.model;
 
-import java.sql.Date;
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -18,24 +14,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "peliculas")
-public class Pelicula {
+@Table(name = "resenas")
+public class Resena {
     @Id
     @NotNull
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id;
-    @NotBlank
-    private String imdb;
-    @NotBlank
-    private String titulo;
-    @NotBlank
-    private String director;
-    @NotBlank
-    private Date fechaEstreno;
-    @NotBlank
-    private String genero;
     @NotNull
     private int puntaje;
-    @OneToMany(mappedBy = "pelicula")
-    private List<Resena> resenas;
+    @NotBlank
+    private String comentario;
 }
