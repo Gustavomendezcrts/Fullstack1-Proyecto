@@ -1,9 +1,12 @@
 package cl.FilmFlux.recomendacionApp.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -20,7 +23,7 @@ public class Usuario {
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id_usuario;
     @NotBlank
     private String nombre;
     @NotBlank
@@ -31,4 +34,6 @@ public class Usuario {
     private String gustoPrincipal;
     @NotBlank
     private String gustoSecundario;
+    @OneToMany(mappedBy = "usuarios")
+    private List<Resena> resenas;
 }

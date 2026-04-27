@@ -26,7 +26,7 @@ public class PeliculaService {
     }
 
     public Pelicula updatePelicula(Pelicula peli){
-        if(!peliculaRepository.existsById(peli.getId())){
+        if(!peliculaRepository.existsById(peli.getId_pelicula())){
             return null;
         }
         return peliculaRepository.save(peli);

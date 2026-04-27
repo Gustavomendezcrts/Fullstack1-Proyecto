@@ -23,7 +23,7 @@ public class Pelicula {
     @Id
     @NotNull
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private int id; 
+    private int id_pelicula; 
     @NotBlank
     private String imdb;
     @NotBlank
