@@ -23,14 +23,14 @@ public class Pelicula {
     @Id
     @NotNull
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private int id;
+    private int id; 
     @NotBlank
     private String imdb;
     @NotBlank
     private String titulo;
     @NotBlank
     private String director;
-    @NotBlank
+    @NotNull
     private Date fechaEstreno;
     @NotBlank
     private String genero;

@@ -36,7 +36,7 @@ public class PeliculaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(peliculaService.savePelicula(pelicula));
     }
     
-    @GetMapping("/{id")
+    @GetMapping("/{id}")
     public ResponseEntity<Pelicula> updatePelicula(@PathVariable int id){
         Pelicula peli = peliculaService.getPeliculaId(id);
         if(peli == null){
