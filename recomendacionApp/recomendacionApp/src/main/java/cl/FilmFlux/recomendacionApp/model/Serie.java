@@ -22,7 +22,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "series")
 public class Serie {
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_serie;
     @NotBlank
