@@ -34,8 +34,6 @@ public class Pelicula {
     private Date fechaEstreno;
     @NotBlank
     private String genero;
-    @NotNull
-    private int puntaje;
     @OneToMany(mappedBy = "pelicula")
     private List<Resena> resenas;
 }
