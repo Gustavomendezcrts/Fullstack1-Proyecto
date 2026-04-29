@@ -21,7 +21,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "peliculas")
 public class Pelicula {
     @Id
-    @NotNull
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id_pelicula; 
     @NotBlank

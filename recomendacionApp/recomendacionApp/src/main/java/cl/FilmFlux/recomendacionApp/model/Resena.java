@@ -19,7 +19,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "resenas")
 public class Resena {
     @Id
-    @NotNull
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private int id_resena;
     @NotNull
