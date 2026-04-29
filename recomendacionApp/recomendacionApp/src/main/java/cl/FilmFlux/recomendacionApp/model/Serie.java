@@ -23,21 +23,29 @@ import lombok.NoArgsConstructor;
 public class Serie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_serie;
+    private Integer id_serie;
+
     @NotBlank
     private String imdb;
+
     @NotBlank
     private String titulo;
+
     @NotBlank
     private String director;
+
     @NotBlank
     private Date fechaEstreno;
+
     @NotBlank
     private String genero;
+
     @NotNull
-    private int puntaje;
+    private Integer puntaje;
+
     @NotNull
-    private int temporadas;
-    @OneToMany(mappedBy = "series")
+    private Integer temporadas;
+
+    @OneToMany(mappedBy = "serie", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
     private List<Resena> resenas;
 }

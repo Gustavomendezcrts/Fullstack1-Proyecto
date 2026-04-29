@@ -9,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,6 +32,6 @@ public class Usuario {
     private String gustoPrincipal;
     @NotBlank
     private String gustoSecundario;
-    @OneToMany(mappedBy = "usuarios")
+    @OneToMany(mappedBy = "usuario", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
     private List<Resena> resenas;
 }

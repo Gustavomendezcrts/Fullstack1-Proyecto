@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 public class Pelicula {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private int id_pelicula; 
+    private Integer id_pelicula; 
     @NotBlank
     private String imdb;
     @NotBlank
@@ -33,6 +33,6 @@ public class Pelicula {
     private Date fechaEstreno;
     @NotBlank
     private String genero;
-    @OneToMany(mappedBy = "pelicula")
+    @OneToMany(mappedBy = "pelicula", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
     private List<Resena> resenas;
 }

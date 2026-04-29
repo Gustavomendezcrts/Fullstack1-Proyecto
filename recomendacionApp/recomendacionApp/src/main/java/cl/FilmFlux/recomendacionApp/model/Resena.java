@@ -12,17 +12,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
+@Table(name = "resenas")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "resenas")
 public class Resena {
+
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private int id_resena;
+    private Integer id_resena;
+
     @NotNull
-    private int puntaje;
+    private Integer puntaje;
+
     @NotBlank
     private String comentario;
 
@@ -32,10 +35,10 @@ public class Resena {
     private Usuario usuario;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "id_pelicula", nullable = true)
+    @JoinColumn(name = "id_pelicula")
     private Pelicula pelicula;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "id_serie", nullable = true)
+    @JoinColumn(name = "id_serie")
     private Serie serie;
 }
