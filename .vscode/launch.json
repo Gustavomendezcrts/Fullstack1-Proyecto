@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-RecomendacionAppApplication<recomendacionApp>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "cl.FilmFlux.recomendacionApp.RecomendacionAppApplication",
+            "projectName": "recomendacionApp",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
