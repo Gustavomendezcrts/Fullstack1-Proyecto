@@ -38,8 +38,12 @@
 >App para crear y gestionar el MySQL
 >[DESCARGA LARAGON](https://laragon.org/download)
 
->[!TIP]
->Para testear el metodo POST en este proyecto se agregaron archivos python
->Dentro de la carpeta /Python
->Se utilizo la libreria Requests para instalarla utiliza 
->[PIP INSTALL REQUESTS]
+> [!TIP]
+> Para testear el método POST en este proyecto se agregaron archivos Python.
+> Dentro de la carpeta `/Python`.
+>
+> Instala la librería necesaria:
+>
+> ```bash
+> pip install requests
+> ```
