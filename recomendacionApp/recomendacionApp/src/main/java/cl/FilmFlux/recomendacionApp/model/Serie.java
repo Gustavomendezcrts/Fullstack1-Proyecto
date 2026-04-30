@@ -34,7 +34,7 @@ public class Serie {
     @NotBlank
     private String director;
 
-    @NotBlank
+    @NotNull
     private Date fechaEstreno;
 
     @NotBlank
