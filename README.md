@@ -1,21 +1,23 @@
 # FilmFlux
 ## Informacion General
 Este proyecto es sobre un sistema de recomendacion de Peliculas o series en conjunto a un sistema de reseñas para esto mismo.
-se trabaja con las librerias de Lombook y Jakarta dentro de un sistema de SpringBoot.
-Los endpoints principales del sistema es
+
+Se trabaja con las librerias de Lombook y Jakarta dentro de un sistema de SpringBoot.
+
 >[!NOTE]
->**Get Peliculas**
->http://Localhost:8080/api/v1/peliculas
->[Ir a endpoint](http://Localhost:8080/api/v1/peliculas)
->**Get Series**
->http://Localhost:8080/api/v1/series
-[Ir a endpoint](http://Localhost:8080/api/v1/series)
->**Get Usuarios**
->http://Localhost:8080/api/v1/usuarios
-[Ir a endpoint](http://Localhost:8080/api/v1/usuarios)
->**Get Reseñas** 
->http://Localhost:8080/api/v1/resenas
-[Ir a endpoint](http://Localhost:8080/api/v1/resenas)
+>## Los endpoints principales del sistema es
+>- **Get Peliculas**
+>   - http://Localhost:8080/api/v1/peliculas
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/peliculas)
+>- **Get Series**
+>   - http://Localhost:8080/api/v1/series
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/series)
+>- **Get Usuarios**
+>   - http://Localhost:8080/api/v1/usuarios
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/usuarios)
+>- **Get Reseñas** 
+>   - http://Localhost:8080/api/v1/resenas
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/resenas)
 
 ---
 ## Modelos
