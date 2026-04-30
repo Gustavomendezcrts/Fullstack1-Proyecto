@@ -15,7 +15,15 @@ data2 = {
     "email" : "gustavo.mendez@example.com",
     "contraseña" : "password456",
     "gustoPrincipal" : "Fantasia",
-    "gustoSecundario" : "Romance"
+    "gustoSecundario" : "Gl"
+}
+
+data3 = {
+    "nombre" : "Paz Ramirez",
+    "email" : "paz.ramirez@example.com",
+    "contraseña" : "password789",
+    "gustoPrincipal" : "Fantasia",
+    "gustoSecundario" : "Bl"
 }
 
 response1 = req.post(url, json=data1)
@@ -24,3 +32,6 @@ print("Respuesta:", response1.text)
 response2 = req.post(url, json=data2)
 print("Status code:", response2.status_code)
 print("Respuesta:", response2.text)
+response3 = req.post(url, json=data3)
+print("Status code:", response3.status_code)
+print("Respuesta:", response3.text)
