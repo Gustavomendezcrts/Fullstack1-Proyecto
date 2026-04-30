@@ -35,3 +35,19 @@ print("Respuesta:", response2.text)
 response3 = req.post(url, json=data3)
 print("Status code:", response3.status_code)
 print("Respuesta:", response3.text)
+
+
+# while True:
+#     i = 0
+#     data = {
+#         "nombre" : f"Usuario {i}",
+#         "email" : f"usuario{i}@example.com",
+#         "contraseña" : f"password{i}",
+#         "gustoPrincipal" : f"Principar{i}",
+#         "gustoSecundario" : f"Segundario{i}"
+#     }
+
+#     response1 = req.post(url, json=data)
+#     print("Status code:", response1.status_code)
+#     print("Respuesta:", response1.text)
+#     i+=1
