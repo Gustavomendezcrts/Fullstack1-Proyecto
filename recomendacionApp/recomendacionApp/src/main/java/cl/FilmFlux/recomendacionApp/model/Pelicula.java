@@ -1,12 +1,10 @@
 package cl.FilmFlux.recomendacionApp.model;
 
 import java.sql.Date;
-import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -33,6 +31,4 @@ public class Pelicula {
     private Date fechaEstreno;
     @NotBlank
     private String genero;
-    @OneToMany(mappedBy = "pelicula", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
-    private List<Resena> resenas;
 }
