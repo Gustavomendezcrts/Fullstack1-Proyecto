@@ -21,12 +21,20 @@
 >- Temporadas (Cantidad)
 
 >**Usuario**
->- Nd
+>- Id
 >- Nombre
 >- Email
 >- Contraseña
 >- Gusto Principal (serie/pelicula)
 >- Gusto Secundario (serie/pelicula)
+
+>**Resena**
+>- Id
+>- Puntaje (1 - 10)
+>- comentario
+>- Id Usuario
+>- Id Serie (si es de una serie)
+>- Id Pelicula (si es de una pelicula)
 
 ## BD's
 >[!NOTE]
