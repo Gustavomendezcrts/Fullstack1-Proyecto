@@ -37,3 +37,8 @@
 >[DESCARGAR HEIDI](https://www.heidisql.com/download.php)
 >App para crear y gestionar el MySQL
 >[DESCARGA LARAGON](https://laragon.org/download)
+
+>[!TIP]
+>Para testear el metodo POST en este proyecto se agregaron archivos python
+>Se utilizo la libreria Requests para instalarla utiliza 
+>pip install requests
