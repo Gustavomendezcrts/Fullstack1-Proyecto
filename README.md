@@ -40,5 +40,6 @@
 
 >[!TIP]
 >Para testear el metodo POST en este proyecto se agregaron archivos python
+>Dentro de la carpeta /Python
 >Se utilizo la libreria Requests para instalarla utiliza 
->pip install requests
+>[PIP INSTALL REQUESTS]
