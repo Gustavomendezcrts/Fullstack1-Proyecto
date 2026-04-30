@@ -45,6 +45,11 @@ public class ResenaController {
         return ResponseEntity.ok(resena);
     }
 
+    @GetMapping("/buscarPorUsuario/{id}")
+    public ResponseEntity<List<Resena>> getResenasByUsuario(@PathVariable int id){
+        return ResponseEntity.ok(resenaService.getResenasByUsuario(id));
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Resena> actualizarResena(@PathVariable int id, @Valid @RequestBody Resena resena) {
         resena.setId_resena(id);
