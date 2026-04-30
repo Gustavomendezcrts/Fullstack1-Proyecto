@@ -1,4 +1,25 @@
 # FilmFlux
+## Informacion General
+Este proyecto es sobre un sistema de recomendacion de Peliculas o series en conjunto a un sistema de reseñas para esto mismo.
+
+Se trabaja con las librerias de Lombook y Jakarta dentro de un sistema de SpringBoot.
+
+>[!NOTE]
+>## Los endpoints principales del sistema es
+>- **Get Peliculas**
+>   - http://Localhost:8080/api/v1/peliculas
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/peliculas)
+>- **Get Series**
+>   - http://Localhost:8080/api/v1/series
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/series)
+>- **Get Usuarios**
+>   - http://Localhost:8080/api/v1/usuarios
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/usuarios)
+>- **Get Reseñas** 
+>   - http://Localhost:8080/api/v1/resenas
+>   - [Ir a endpoint](http://Localhost:8080/api/v1/resenas)
+
+---
 ## Modelos
 >**Pelicula**
 >- Id
@@ -35,7 +56,7 @@
 >- Id Usuario
 >- Id Serie (si es de una serie)
 >- Id Pelicula (si es de una pelicula)
-
+---
 ## BD's
 >[!NOTE]
 >La base de datos con nombre FilmFlux se crea de forma automatica con el mysql de Laragon en el caso de que no se encuentre la base de datos
@@ -46,6 +67,8 @@
 >App para crear y gestionar el MySQL
 >[DESCARGA LARAGON](https://laragon.org/download)
 
+---
+## Scrips de testeo
 > [!TIP]
 > Para testear el método POST en este proyecto se agregaron archivos Python.
 > Dentro de la carpeta `/Python`.
