@@ -26,7 +26,6 @@ public class ResenaService {
                 listaResenas.add(resena);
             }
         }
-
         return listaResenas;
     }
 
@@ -34,11 +33,23 @@ public class ResenaService {
         List<Resena> listaResenas = new ArrayList<>();
 
         for(Resena resena : resenaRepository.findAll()){
-            if(resena.getPelicula().getId_pelicula() == id){
+            if(resena.getPelicula() != null
+                && resena.getPelicula().getId_pelicula() == id){
                 listaResenas.add(resena);
             }
         }
+        return listaResenas;
+    }
 
+        public List<Resena> getResenasBySerie(int id){
+        List<Resena> listaResenas = new ArrayList<>();
+
+        for(Resena resena : resenaRepository.findAll()){
+            if(resena.getSerie() != null
+                && resena.getSerie().getId_serie() == id){
+                listaResenas.add(resena);
+            }
+        }
         return listaResenas;
     }
 
