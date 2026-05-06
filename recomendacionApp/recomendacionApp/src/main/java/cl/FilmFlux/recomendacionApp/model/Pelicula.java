@@ -31,4 +31,6 @@ public class Pelicula {
     private Date fechaEstreno;
     @NotBlank
     private String genero;
+    @NotNull
+    private Integer puntaje;
 }

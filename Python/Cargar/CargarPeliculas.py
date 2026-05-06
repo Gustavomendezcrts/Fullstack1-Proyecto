@@ -7,7 +7,8 @@ data1 = {
     "titulo" : "Harry Potter y la Piedra Filosofal",
     "director" : "Chris Columbus",
     "fechaEstreno" : "2001-11-16",
-    "genero" : "Fantasia"
+    "genero" : "Fantasia",
+    "puntaje" : 8
 }
 
 data2 = {
@@ -15,7 +16,8 @@ data2 = {
     "titulo" : "Harry Potter y la Cámara Secreta",
     "director" : "Chris Columbus",
     "fechaEstreno" : "2002-11-15",
-    "genero" : "Fantasia"
+    "genero" : "Fantasia",
+    "puntaje" : 7
 }
 
 
