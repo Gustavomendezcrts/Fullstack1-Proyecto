@@ -31,18 +31,14 @@ public class PeliculaController {
         return ResponseEntity.ok(peliculaService.getPeliculas());
     }
 
+    @GetMapping("/genero/{genero}")
+    public ResponseEntity<List<Pelicula>> getPeliculasByGenero(@PathVariable String genero){
+        return ResponseEntity.ok(peliculaService.getPeliculasByGenero(genero));
+    }
+
     @PostMapping
     public ResponseEntity<Pelicula> savePelicula(@Valid @RequestBody Pelicula pelicula){
         return ResponseEntity.status(HttpStatus.CREATED).body(peliculaService.savePelicula(pelicula));
-    }
-    
-    @GetMapping("/{id}")
-    public ResponseEntity<Pelicula> updatePelicula(@PathVariable int id){
-        Pelicula peli = peliculaService.getPeliculaId(id);
-        if(peli == null){
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(peli);
     }
 
     @PutMapping("/{id}")

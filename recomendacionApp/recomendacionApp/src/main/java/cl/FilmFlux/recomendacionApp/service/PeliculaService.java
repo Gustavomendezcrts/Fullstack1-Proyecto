@@ -1,6 +1,7 @@
 package cl.FilmFlux.recomendacionApp.service;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,17 @@ public class PeliculaService {
 
     public List<Pelicula> getPeliculas(){
         return peliculaRepository.findAll();
+    }
+
+    public List<Pelicula> getPeliculasByGenero(String genero){
+        List<Pelicula> listaPelis = new ArrayList<>();
+
+        for(Pelicula peli : peliculaRepository.findAll()){
+            if(peli.getGenero() == genero){
+                listaPelis.add(peli);
+            }
+        }
+        return listaPelis;
     }
 
     public Pelicula savePelicula(Pelicula peli){

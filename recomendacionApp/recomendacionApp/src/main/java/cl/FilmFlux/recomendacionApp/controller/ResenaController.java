@@ -45,17 +45,17 @@ public class ResenaController {
         return ResponseEntity.ok(resena);
     }
 
-    @GetMapping("/buscarPorUsuario/{id}")
+    @GetMapping("/resenaPorUsuario/{id}")
     public ResponseEntity<List<Resena>> getResenasByUsuario(@PathVariable int id){
         return ResponseEntity.ok(resenaService.getResenasByUsuario(id));
     }
     
-    @GetMapping("/buscarPorPelicula/{id}")
+    @GetMapping("/resenaPorPelicula/{id}")
     public ResponseEntity<List<Resena>> getResenasByPelicula(@PathVariable int id){
         return ResponseEntity.ok(resenaService.getResenasByPelicula(id));
     }
 
-    @GetMapping("/buscarPorSerie/{id}")
+    @GetMapping("/resenaPorSerie/{id}")
     public ResponseEntity<List<Resena>> getResenasBySerie(@PathVariable int id){
         return ResponseEntity.ok(resenaService.getResenasBySerie(id));
     }
