@@ -46,7 +46,7 @@ public class PeliculaController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Pelicula> actualizarAutor(@PathVariable int id, @Valid @RequestBody Pelicula peli) {
+    public ResponseEntity<Pelicula> actualizarPelicula(@PathVariable int id, @Valid @RequestBody Pelicula peli) {
         peli.setId_pelicula(id);
         Pelicula peliActualizada = peliculaService.updatePelicula(peli);
         if (peliActualizada == null) {
