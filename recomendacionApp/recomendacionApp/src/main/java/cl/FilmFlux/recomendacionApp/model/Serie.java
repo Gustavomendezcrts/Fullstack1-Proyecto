@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Serie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id_serie;
+    private Integer idSerie;
 
     @NotBlank
     private String imdb;

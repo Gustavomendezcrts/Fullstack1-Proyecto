@@ -26,7 +26,7 @@ public class UsuarioService {
     }
 
     public Usuario updateUsuario(Usuario user){
-        if(!usuarioRepository.existsById(user.getId_usuario())){
+        if(!usuarioRepository.existsById(user.getIdUsuario())){
             return null;
         }
         return usuarioRepository.save(user);

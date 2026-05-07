@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
 public class Pelicula {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Integer id_pelicula; 
+    private Integer idPelicula; 
     @NotBlank
     private String imdb;
     @NotBlank

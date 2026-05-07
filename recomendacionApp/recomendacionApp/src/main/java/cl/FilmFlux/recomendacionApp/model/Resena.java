@@ -21,7 +21,7 @@ public class Resena {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Integer id_resena;
+    private Integer idResena;
 
     @NotNull
     private Integer puntaje;
@@ -31,14 +31,14 @@ public class Resena {
 
     @NotNull
     @ManyToOne(optional = false)
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @JoinColumn(name = "idUsuario", nullable = false)
     private Usuario usuario;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "id_pelicula")
+    @JoinColumn(name = "idPelicula")
     private Pelicula pelicula;
 
     @ManyToOne(optional = true)
-    @JoinColumn(name = "id_serie")
+    @JoinColumn(name = "idSerie")
     private Serie serie;
 }

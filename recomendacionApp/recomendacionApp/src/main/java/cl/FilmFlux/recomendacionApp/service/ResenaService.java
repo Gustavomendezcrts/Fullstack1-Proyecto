@@ -2,10 +2,12 @@ package cl.FilmFlux.recomendacionApp.service;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.FilmFlux.recomendacionApp.DTO.Resena_DTO;
 import cl.FilmFlux.recomendacionApp.model.Resena;
 import cl.FilmFlux.recomendacionApp.repository.ResenaRepository;
 
@@ -18,23 +20,50 @@ public class ResenaService {
         return resenaRepository.findAll();
     }
 
-    public List<Resena> getResenasByUsuario(int id){
-        List<Resena> listaResenas = new ArrayList<>();
+public List<Resena_DTO> getResenasByUsuario(int id){
 
-        for(Resena resena : resenaRepository.findAll()){
-            if(resena.getUsuario().getId_usuario() == id){
-                listaResenas.add(resena);
-            }
-        }
-        return listaResenas;
-    }
+    return resenaRepository.findByUsuario_idUsuario(id).stream()
+            .map(r -> {
+
+                String tipo;
+                String titulo;
+                Date fechaEstreno;
+                Integer puntajeMedia;
+
+                if (r.getPelicula() != null) {
+
+                    tipo = "Pelicula";
+                    titulo = r.getPelicula().getTitulo();
+                    fechaEstreno = r.getPelicula().getFechaEstreno();
+                    puntajeMedia = r.getPelicula().getPuntaje();
+
+                } else {
+
+                    tipo = "Serie";
+                    titulo = r.getSerie().getTitulo();
+                    fechaEstreno = r.getSerie().getFechaEstreno();
+                    puntajeMedia = r.getSerie().getPuntaje();
+                }
+
+                return new Resena_DTO(
+                        r.getPuntaje(),
+                        r.getComentario(),
+                        r.getUsuario().getNombre(),
+                        tipo,
+                        titulo,
+                        fechaEstreno,
+                        puntajeMedia
+                );
+            })
+            .toList();
+}
 
     public List<Resena> getResenasByPelicula(int id){
         List<Resena> listaResenas = new ArrayList<>();
 
         for(Resena resena : resenaRepository.findAll()){
             if(resena.getPelicula() != null
-                && resena.getPelicula().getId_pelicula() == id){
+                && resena.getPelicula().getIdPelicula() == id){
                 listaResenas.add(resena);
             }
         }
@@ -46,7 +75,7 @@ public class ResenaService {
 
         for(Resena resena : resenaRepository.findAll()){
             if(resena.getSerie() != null
-                && resena.getSerie().getId_serie() == id){
+                && resena.getSerie().getIdSerie() == id){
                 listaResenas.add(resena);
             }
         }
@@ -62,7 +91,7 @@ public class ResenaService {
     }
 
     public Resena updateResena(Resena resena){
-        if(!resenaRepository.existsById(resena.getId_resena())){
+        if(!resenaRepository.existsById(resena.getIdResena())){
             return null;
         }
         return resenaRepository.save(resena);

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import cl.FilmFlux.recomendacionApp.model.Resena;
 import cl.FilmFlux.recomendacionApp.service.ResenaService;
+import cl.FilmFlux.recomendacionApp.DTO.Resena_DTO;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -44,25 +45,10 @@ public class ResenaController {
         }
         return ResponseEntity.ok(resena);
     }
-
-    @GetMapping("/resenaPorUsuario/{id}")
-    public ResponseEntity<List<Resena>> getResenasByUsuario(@PathVariable int id){
-        return ResponseEntity.ok(resenaService.getResenasByUsuario(id));
-    }
     
-    @GetMapping("/resenaPorPelicula/{id}")
-    public ResponseEntity<List<Resena>> getResenasByPelicula(@PathVariable int id){
-        return ResponseEntity.ok(resenaService.getResenasByPelicula(id));
-    }
-
-    @GetMapping("/resenaPorSerie/{id}")
-    public ResponseEntity<List<Resena>> getResenasBySerie(@PathVariable int id){
-        return ResponseEntity.ok(resenaService.getResenasBySerie(id));
-    }
-
     @PutMapping("/{id}")
     public ResponseEntity<Resena> actualizarResena(@PathVariable int id, @Valid @RequestBody Resena resena) {
-        resena.setId_resena(id);
+        resena.setIdResena(id);
         Resena resenaActualizada = resenaService.updateResena(resena);
         if (resenaActualizada == null) {
             return ResponseEntity.notFound().build();
@@ -75,5 +61,22 @@ public class ResenaController {
         resenaService.deleteResena(id);
         return ResponseEntity.noContent().build();
     }
+
+    // Metodos especiales
+    @GetMapping("/resenasPorUsuario/{id}")
+    public ResponseEntity<List<Resena_DTO>> getResenasByUsuario(@PathVariable int id){
+        return ResponseEntity.ok(resenaService.getResenasByUsuario(id));
+    }
+
+    @GetMapping("/resenaPorPelicula/{id}")
+    public ResponseEntity<List<Resena>> getResenasByPelicula(@PathVariable int id){
+        return ResponseEntity.ok(resenaService.getResenasByPelicula(id));
+    }
+
+    @GetMapping("/resenasPorSerie/{id}")
+    public ResponseEntity<List<Resena>> getResenasBySerie(@PathVariable int id){
+        return ResponseEntity.ok(resenaService.getResenasBySerie(id));
+    }
+
 
 }

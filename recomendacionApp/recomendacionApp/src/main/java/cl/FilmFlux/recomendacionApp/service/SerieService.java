@@ -26,7 +26,7 @@ public class SerieService {
     }
 
     public Serie updateSerie(Serie serie){
-        if(!serieRepository.existsById(serie.getId_serie())){
+        if(!serieRepository.existsById(serie.getIdSerie())){
             return null;
         }
         return serieRepository.save(serie);

@@ -47,7 +47,7 @@ public class SerieController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Serie> actualizarSerie(@PathVariable int id, @Valid @RequestBody Serie serie) {
-        serie.setId_serie(id);
+        serie.setIdSerie(id);
         Serie serieActualizada = serieService.updateSerie(serie);
         if (serieActualizada == null) {
             return ResponseEntity.notFound().build();

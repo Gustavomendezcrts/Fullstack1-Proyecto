@@ -5,29 +5,29 @@ url = "http://localhost:8080/api/v1/resenas"
 data1 = {
     "puntaje": 7,
     "comentario": "test Percy Jackson",
-    "usuario": {"id_usuario": 3},
-    "serie": {"id_serie": 1}
+    "usuario": {"idUsuario": 3},
+    "serie": {"idSerie": 1}
 }
 
 data2 = {
     "puntaje": 9,
     "comentario": "test One Piece",
-    "usuario": {"id_usuario": 2},
-    "serie": {"id_serie": 2}
+    "usuario": {"idUsuario": 2},
+    "serie": {"idSerie": 2}
 }
 
 data3 = {
     "puntaje": 8,
     "comentario": "test Harry Potter",
-    "usuario": {"id_usuario": 1},
-    "pelicula": {"id_pelicula": 1}
+    "usuario": {"idUsuario": 1},
+    "pelicula": {"idPelicula": 1}
 }
 
 data4 = {
     "puntaje": 8,
     "comentario": "test Harry Potter y la camara de los secretos",
-    "usuario": {"id_usuario": 1},
-    "pelicula": {"id_pelicula": 1}
+    "usuario": {"idUsuario": 1},
+    "pelicula": {"idPelicula": 1}
 }
 
 response1 = req.post(url, json=data1)
