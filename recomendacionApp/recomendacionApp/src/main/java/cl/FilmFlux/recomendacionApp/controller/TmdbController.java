@@ -22,6 +22,7 @@ public class TmdbController {
         
         // Creamos una lista en lugar de un mapa
         List<Object> response = new ArrayList<>();
+        System.out.println("TMDB API -> Busqueda IMDB:" + imdbCode);
 
         if (urlPoster != null) {
             response.add("ID: " + imdbCode);
@@ -30,7 +31,7 @@ public class TmdbController {
             return ResponseEntity.ok(response);
         } else {
             response.add("ID: " + imdbCode);
-            response.add("Poster: null");
+            response.add("Poster: No encontrado");
             response.add("Status: No encontrado");
             response.add("Error: No se encontró el póster para el código proporcionado.");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);

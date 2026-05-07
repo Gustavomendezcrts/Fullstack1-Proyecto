@@ -24,12 +24,9 @@ public class TmdbDTO {
 
     @Data
     @NoArgsConstructor
-    @AllArgsConstructor
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ContentResult {
-        @JsonProperty("poster_path")
-        private String posterPath;
-        @JsonProperty("still_path") // Para episodios de TV
-        private String stillPath;
+        private String poster_path;
+
     }
 }
