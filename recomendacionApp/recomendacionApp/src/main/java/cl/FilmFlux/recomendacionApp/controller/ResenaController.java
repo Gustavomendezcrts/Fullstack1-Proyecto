@@ -68,13 +68,13 @@ public class ResenaController {
         return ResponseEntity.ok(resenaService.getResenasByUsuario(id));
     }
 
-    @GetMapping("/resenaPorPelicula/{id}")
-    public ResponseEntity<List<Resena>> getResenasByPelicula(@PathVariable int id){
+    @GetMapping("/resenasPorPelicula/{id}")
+    public ResponseEntity<List<Resena_DTO>> getResenasByPelicula(@PathVariable int id){
         return ResponseEntity.ok(resenaService.getResenasByPelicula(id));
     }
 
     @GetMapping("/resenasPorSerie/{id}")
-    public ResponseEntity<List<Resena>> getResenasBySerie(@PathVariable int id){
+    public ResponseEntity<List<Resena_DTO>> getResenasBySerie(@PathVariable int id){
         return ResponseEntity.ok(resenaService.getResenasBySerie(id));
     }
 
