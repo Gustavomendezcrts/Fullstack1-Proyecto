@@ -1,0 +1,433 @@
+{
+  "info": {
+    "_postman_id": "3d02cfc7-420f-463c-be51-1f3f6491e058",
+    "name": "Proyecto Fulltack filmflux",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53316717",
+    "_collection_link": "https://go.postman.co/collection/53316717-3d02cfc7-420f-463c-be51-1f3f6491e058?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Ver Peliculas",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/peliculas",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "peliculas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar Pelicula",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"imdb\" : \"tt0241527\",\r\n    \"titulo\" : \"Harry Potter y la Piedra Filosofal\",\r\n    \"director\" : \"Chris Columbus\",\r\n    \"fechaEstreno\" : \"2001-11-16\",\r\n    \"genero\" : \"Fantasia\",\r\n    \"puntaje\" : 8\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/peliculas",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "peliculas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Pelicula",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"imdb\" : \"tt0241527\",\r\n    \"titulo\" : \"Harry Potter y la Piedra Filosofal (Actualizado)\",\r\n    \"director\" : \"Chris Columbus\",\r\n    \"fechaEstreno\" : \"2001-11-16\",\r\n    \"genero\" : \"Fantasia\",\r\n    \"puntaje\" : 9\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/peliculas/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "peliculas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Pelicula",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/peliculas/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "peliculas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver Serie",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/series",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "series"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cargar Serie",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"imdb\" : \"tt12324366\",\r\n    \"titulo\" : \"Percy Jackson y los dioses del Olimpo\",\r\n    \"director\" : \"Rick Riordan\",\r\n    \"fechaEstreno\" : \"2023-12-19\",\r\n    \"genero\" : \"Fantasia\",\r\n    \"puntaje\" : 7,\r\n    \"temporadas\" : 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/series",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "series"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Serie",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"imdb\" : \"tt12324366\",\r\n    \"titulo\" : \"Percy Jackson y los dioses del Olimpo (Actualizado)\",\r\n    \"director\" : \"Rick Riordan\",\r\n    \"fechaEstreno\" : \"2023-12-19\",\r\n    \"genero\" : \"Fantasia\",\r\n    \"puntaje\" : 9,\r\n    \"temporadas\" : 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/series/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "series",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Serie",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/series/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "series",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver Usuarios",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/usuarios",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Agregar Usuarios",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\" : \"Gustavo Mendez\",\r\n    \"email\" : \"gustavo.mendez@example.com\",\r\n    \"contraseña\" : \"password456\",\r\n    \"gustoPrincipal\" : \"Fantasia\",\r\n    \"gustoSecundario\" : \"Accion\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/usuarios",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar usuario",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\" : \"Gustavo Mendez (Actualizado)\",\r\n    \"email\" : \"gustavo.mendez@example.com\",\r\n    \"contraseña\" : \"password4567\",\r\n    \"gustoPrincipal\" : \"Fantasia\",\r\n    \"gustoSecundario\" : \"Accion\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/usuarios/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Usuario",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/usuarios/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "usuarios",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver Resena",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/resenas",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "resenas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cargar Resena",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"puntaje\": 7,\r\n    \"comentario\": \"test Percy Jackson\",\r\n    \"usuario\": {\"id_usuario\": 1},\r\n    \"serie\": {\"id_serie\": 1}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/resenas",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "resenas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar Resena",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"puntaje\": 8,\r\n    \"comentario\": \"test Percy Jackson (Actualizado)\",\r\n    \"usuario\": {\"id_usuario\": 1},\r\n    \"serie\": {\"id_serie\": 1}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/resenas/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "resenas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Resena",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/resenas/1",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "resenas",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar Portada TMBd Api",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseurl}}/api/v1/tmdb/tt0241527",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tmdb",
+            "tt0241527"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseurl",
+      "value": ""
+    }
+  ]
+}
