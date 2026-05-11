@@ -2,7 +2,6 @@ package cl.FilmFlux.recomendacionApp.service;
 
 import java.util.List;
 import java.util.Date;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
