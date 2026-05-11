@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import cl.FilmFlux.recomendacionApp.DTO.Usuario_DTO;
 import cl.FilmFlux.recomendacionApp.model.Usuario;
 import cl.FilmFlux.recomendacionApp.service.UsuarioService;
 import jakarta.validation.Valid;
@@ -27,7 +28,7 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping
-    public ResponseEntity<List<Usuario>> getUsuarios(){
+    public ResponseEntity<List<Usuario_DTO>> getUsuarios(){
         return ResponseEntity.ok(usuarioService.getUsuarios());
     }
 
@@ -37,12 +38,12 @@ public class UsuarioController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario> getUsuario(@PathVariable int id){
+    public ResponseEntity<Usuario_DTO> getUsuario(@PathVariable int id){
         Usuario usuario = usuarioService.getUsuarioId(id);
         if(usuario == null){
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(usuario);
+        return ResponseEntity.ok(usuarioService.getUsuarioDTO(id));
     }
 
     @PutMapping("/{id}")
