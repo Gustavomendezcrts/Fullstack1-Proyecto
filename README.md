@@ -72,7 +72,7 @@ Se trabaja con las librerias de Lombook y Jakarta dentro de un sistema de Spring
 > [!TIP]
 > Para testear el método POST en este proyecto se agrego un archivo JSON donde vienen solicitudes REST de postman.
 > Dentro de la carpeta `/postman`.
---'
+---
 ##Autores 
 ##Tomas Martines
 ##Gustavo Mendez
