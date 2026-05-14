@@ -74,5 +74,4 @@ Se trabaja con las librerias de Lombook y Jakarta dentro de un sistema de Spring
 > Dentro de la carpeta `/postman`.
 ---
 ## Autores 
-## Tomas Martines
-## Gustavo Mendez
+### Tomas Martines - Gustavo Mendez
