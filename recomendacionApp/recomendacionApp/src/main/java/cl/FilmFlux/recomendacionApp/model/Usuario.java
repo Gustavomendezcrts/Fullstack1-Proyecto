@@ -1,5 +1,6 @@
 package cl.FilmFlux.recomendacionApp.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,6 +21,7 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUsuario;
     @NotBlank
+    @Column(unique = true)
     private String nombre;
     @NotBlank
     private String email;

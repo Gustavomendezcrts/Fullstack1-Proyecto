@@ -38,12 +38,12 @@ public class UsuarioController {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity<Usuario_DTO> getUsuario(@PathVariable int id){
+    public ResponseEntity<Usuario_DTO> getUsuarioById(@PathVariable int id){
         Usuario usuario = usuarioService.getUsuarioId(id);
         if(usuario == null){
             return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.ok(usuarioService.getUsuarioDTO(id));
+        return ResponseEntity.ok(usuarioService.getUsuarioById(id));
     }
 
     @PutMapping("/{id}")
@@ -62,4 +62,12 @@ public class UsuarioController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/username/{username}")
+    public ResponseEntity<Usuario_DTO> getUsuarioByUsername(@PathVariable String username){
+        Usuario_DTO usuario = usuarioService.getUsuarioByUsername(username);
+        if(usuario == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(usuarioService.getUsuarioByUsername(username));
+    }
 }

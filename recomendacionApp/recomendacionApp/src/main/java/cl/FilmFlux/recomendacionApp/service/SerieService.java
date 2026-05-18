@@ -1,5 +1,6 @@
 package cl.FilmFlux.recomendacionApp.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class SerieService {
     }
 
     public Serie saveSerie(Serie serie){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Guardando serie: " + serie.getTitulo());
         return serieRepository.save(serie);
     }
 

@@ -28,7 +28,7 @@ public class ResenaController {
     private ResenaService resenaService;
 
     @GetMapping
-    public ResponseEntity<List<Resena>> getResenas(){
+    public ResponseEntity<List<Resena_DTO>> getResenas(){
         return ResponseEntity.ok(resenaService.getResenas());
     }
 
