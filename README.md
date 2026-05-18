@@ -12,7 +12,9 @@ Tambien se recomienda el uso de Heidi SQL para la visualizacion de las distintas
 
 se tiene que descargar el proyecto para la ejecucion con el comando 
 
-`Git clone https://github.com/Gustavomendezcrts/Fullstack1-Proyecto.git`
+```shell
+Git clone https://github.com/Gustavomendezcrts/Fullstack1-Proyecto.git
+```
 
 > [!NOTE]
 > Al momento de ejecucion la aplicacion por si sola creara las tablas y sus atributos al igual que sus relaciones, no es necesario crearlas manualmente
@@ -168,4 +170,5 @@ se tiene que descargar el proyecto para la ejecucion con el comando
 >   - Aquí un ejemplo de endpoint: [Ir a endpoint](http://localhost:8080/api/v1/tmdb/tt0111161)
 ---
 ## Autores 
-### Tomas Martines - Gustavo Mendez
+### [Tomas Martinez](https://github.com/tomasm-duoc)
+### [Gustavo Mendez](https://github.com/Gustavomendezcrts)
