@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,8 +23,7 @@ public class TmdbController {
         
         // Creamos una lista en lugar de un mapa
         List<Object> response = new ArrayList<>();
-        System.out.println("TMDB API -> Busqueda IMDB:" + imdbCode);
-
+        System.out.println("[" + LocalDateTime.now() + "] " + "Buscando en TMBd" + " | Imdb ID: " + imdbCode);
         if (urlPoster != null) {
             response.add("ID: " + imdbCode);
             response.add("Poster: " + urlPoster);
