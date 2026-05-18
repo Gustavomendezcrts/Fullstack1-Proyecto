@@ -170,5 +170,5 @@ Git clone https://github.com/Gustavomendezcrts/Fullstack1-Proyecto.git
 >   - Aquí un ejemplo de endpoint: [Ir a endpoint](http://localhost:8080/api/v1/tmdb/tt0111161)
 ---
 ## Autores 
-### [Tomas Martinez](https://github.com/tomasm-duoc)
-### [Gustavo Mendez](https://github.com/Gustavomendezcrts)
+### [Tomás Martínez](https://github.com/tomasm-duoc)
+### [Gustavo Méndez](https://github.com/Gustavomendezcrts)
