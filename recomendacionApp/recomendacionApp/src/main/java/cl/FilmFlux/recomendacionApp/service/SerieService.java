@@ -15,6 +15,7 @@ public class SerieService {
     private SerieRepository serieRepository;
 
     public List<Serie> getSeries(){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo todas las series: | " + serieRepository.findAll().size() + " Elementos");
         return serieRepository.findAll();
     }
 
@@ -24,10 +25,12 @@ public class SerieService {
     }
 
     public Serie getSerieId(int id){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo serie por ID: " + id);
         return serieRepository.findById(id).orElse(null);
     }
 
     public Serie updateSerie(Serie serie){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Actualizando serie | ID: " + serie.getIdSerie());
         if(!serieRepository.existsById(serie.getIdSerie())){
             return null;
         }
@@ -35,6 +38,7 @@ public class SerieService {
     }
 
     public void deleteSerie(int id){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Borrando serie | ID: " + id);
         serieRepository.deleteById(id);
     }
 }

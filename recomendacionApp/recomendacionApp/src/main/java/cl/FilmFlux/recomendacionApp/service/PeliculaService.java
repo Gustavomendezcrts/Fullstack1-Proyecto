@@ -2,7 +2,6 @@ package cl.FilmFlux.recomendacionApp.service;
 
 import java.util.List;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,18 +15,13 @@ public class PeliculaService {
     private PeliculaRepository peliculaRepository;
 
     public List<Pelicula> getPeliculas(){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo todas las peliculas | " + peliculaRepository.findAll().size() + " | Elementos");
         return peliculaRepository.findAll();
     }
 
     public List<Pelicula> getPeliculasByGenero(String genero){
-        List<Pelicula> listaPelis = new ArrayList<>();
-
-        for(Pelicula peli : peliculaRepository.findAll()){
-            if(peli.getGenero() == genero){
-                listaPelis.add(peli);
-            }
-        }
-        return listaPelis;
+        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo peliculas por genero: " + genero + " | " + peliculaRepository.findByGenero(genero).size() + " Elementos");
+        return peliculaRepository.findByGenero(genero);
     }
 
     public Pelicula savePelicula(Pelicula peli){
@@ -36,10 +30,12 @@ public class PeliculaService {
     }
 
     public Pelicula getPeliculaId(int id){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo pelicula por ID: " + id);
         return peliculaRepository.findById(id).orElse(null);
     }
 
     public Pelicula updatePelicula(Pelicula peli){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Actualizando pelicula | ID: " + peli.getIdPelicula());
         if(!peliculaRepository.existsById(peli.getIdPelicula())){
             return null;
         }
@@ -47,6 +43,7 @@ public class PeliculaService {
     }
 
     public void deletePelicula(int id){
+        System.out.println("[" + LocalDateTime.now() + "] " + "Borrando Pelicula | ID: " + id);
         peliculaRepository.deleteById(id);
     }
 }
