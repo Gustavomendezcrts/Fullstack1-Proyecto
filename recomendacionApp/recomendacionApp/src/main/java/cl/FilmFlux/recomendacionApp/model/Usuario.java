@@ -21,7 +21,6 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUsuario;
     @NotBlank
-    @Column(unique = true)
     private String nombre;
     @NotBlank
     private String email;
