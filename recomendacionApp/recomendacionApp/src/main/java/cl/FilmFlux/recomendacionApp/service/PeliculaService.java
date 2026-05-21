@@ -15,35 +15,64 @@ public class PeliculaService {
     private PeliculaRepository peliculaRepository;
 
     public List<Pelicula> getPeliculas(){
-        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo todas las peliculas | " + peliculaRepository.findAll().size() + " | Elementos");
-        return peliculaRepository.findAll();
+        try{
+            System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo todas las peliculas | " + peliculaRepository.findAll().size() + " | Elementos");
+            return peliculaRepository.findAll();
+        }catch(Exception e){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al traer peliculas: | " + e.getMessage());
+            return null;
+        }
     }
 
     public List<Pelicula> getPeliculasByGenero(String genero){
-        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo peliculas por genero: " + genero + " | " + peliculaRepository.findByGenero(genero).size() + " Elementos");
-        return peliculaRepository.findByGenero(genero);
+        try{
+            System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo peliculas por genero: " + genero + " | " + peliculaRepository.findByGenero(genero).size() + " Elementos");
+            return peliculaRepository.findByGenero(genero);
+        }catch(Exception e){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al traer peliculas por genero: " + genero + " | " + e.getMessage());
+            return null;
+        }
     }
 
     public Pelicula savePelicula(Pelicula peli){
+        try{
         System.out.println("[" + LocalDateTime.now() + "] " + "Guardando pelicula: " + peli.getTitulo());
         return peliculaRepository.save(peli);
+        }catch(Exception e){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al guardar pelicula: " + peli.getTitulo() + " | " + e.getMessage());
+            return null;
+        }
     }
 
     public Pelicula getPeliculaId(int id){
-        System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo pelicula por ID: " + id);
-        return peliculaRepository.findById(id).orElse(null);
+        try{
+            System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo pelicula por ID: " + id);
+            return peliculaRepository.findById(id).orElse(null);
+        }catch(Exception e){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al traer pelicula por ID: " + id + " | " + e.getMessage());
+            return null;
+        }
     }
 
     public Pelicula updatePelicula(Pelicula peli){
-        System.out.println("[" + LocalDateTime.now() + "] " + "Actualizando pelicula | ID: " + peli.getIdPelicula());
-        if(!peliculaRepository.existsById(peli.getIdPelicula())){
+        try{
+            System.out.println("[" + LocalDateTime.now() + "] " + "Actualizando pelicula | ID: " + peli.getIdPelicula());
+            if(!peliculaRepository.existsById(peli.getIdPelicula())){
+                return null;
+            }
+            return peliculaRepository.save(peli);
+        }catch(Exception e){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al actualizar pelicula: " + peli.getTitulo() + " | " + e.getMessage());
             return null;
         }
-        return peliculaRepository.save(peli);
     }
 
     public void deletePelicula(int id){
-        System.out.println("[" + LocalDateTime.now() + "] " + "Borrando Pelicula | ID: " + id);
-        peliculaRepository.deleteById(id);
+        try{
+            System.out.println("[" + LocalDateTime.now() + "] " + "Borrando Pelicula | ID: " + id);
+            peliculaRepository.deleteById(id);
+        }catch(Exception e){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al borrar pelicula: " + id + " | " + e.getMessage());
+        }
     }
 }

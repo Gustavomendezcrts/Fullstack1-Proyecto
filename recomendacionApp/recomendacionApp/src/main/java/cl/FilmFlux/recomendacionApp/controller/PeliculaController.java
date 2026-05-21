@@ -1,5 +1,6 @@
 package cl.FilmFlux.recomendacionApp.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,32 +29,62 @@ public class PeliculaController {
 
     @GetMapping
     public ResponseEntity<List<Pelicula>> getPeliculas(){
-        return ResponseEntity.ok(peliculaService.getPeliculas());
+        List<Pelicula> peliculas = peliculaService.getPeliculas();
+
+        if(peliculas.isEmpty()){
+            System.out.println("[" + LocalDateTime.now() + "] " + "No se encontraron peliculas");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }else{
+            return ResponseEntity.ok(peliculaService.getPeliculas());
+        }
     }
 
     @GetMapping("/genero/{genero}")
     public ResponseEntity<List<Pelicula>> getPeliculasByGenero(@PathVariable String genero){
-        return ResponseEntity.ok(peliculaService.getPeliculasByGenero(genero));
+        List<Pelicula> peliculasByGenero = peliculaService.getPeliculasByGenero(genero);
+
+        if(peliculasByGenero.isEmpty()){
+            System.out.println("[" + LocalDateTime.now() + "] " + "No se encontraron peliculas para el genero: " + genero);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }else{
+            return ResponseEntity.ok(peliculaService.getPeliculasByGenero(genero));
+        }
     }
 
     @PostMapping
     public ResponseEntity<Pelicula> savePelicula(@Valid @RequestBody Pelicula pelicula){
-        return ResponseEntity.status(HttpStatus.CREATED).body(peliculaService.savePelicula(pelicula));
+        if(pelicula == null){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al guardar pelicula: Datos de pelicula no proporcionados");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }else{
+            return ResponseEntity.status(HttpStatus.CREATED).body(peliculaService.savePelicula(pelicula));
+        }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Pelicula> actualizarPelicula(@PathVariable int id, @Valid @RequestBody Pelicula peli) {
-        peli.setIdPelicula(id);
-        Pelicula peliActualizada = peliculaService.updatePelicula(peli);
-        if (peliActualizada == null) {
-            return ResponseEntity.notFound().build();
+        if(peli == null){
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al actualizar pelicula: Datos de pelicula no proporcionados");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }else{
+            peli.setIdPelicula(id);
+            Pelicula peliActualizada = peliculaService.updatePelicula(peli);
+            if (peliActualizada == null) {
+                return ResponseEntity.notFound().build();
+            }
+            return ResponseEntity.ok(peliActualizada);
         }
-        return ResponseEntity.ok(peliActualizada);
     }
     
-    @DeleteMapping("/{id}")
+   @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePelicula(@PathVariable int id) {
+
+        if(peliculaService.getPeliculaId(id) == null){
+             return ResponseEntity.notFound().build();
+        }
+
         peliculaService.deletePelicula(id);
+
         return ResponseEntity.noContent().build();
     }
 
