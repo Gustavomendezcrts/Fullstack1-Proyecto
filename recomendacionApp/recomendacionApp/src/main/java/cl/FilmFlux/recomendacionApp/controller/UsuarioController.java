@@ -29,18 +29,31 @@ public class UsuarioController {
 
     @GetMapping
     public ResponseEntity<List<Usuario_DTO>> getUsuarios(){
-        return ResponseEntity.ok(usuarioService.getUsuarios());
+        List<Usuario_DTO> usuarios = usuarioService.getUsuarios();
+        if(usuarios.isEmpty()){
+            System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontraron usuarios");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }else{
+            return ResponseEntity.ok(usuarioService.getUsuarios());
+        }
     }
 
     @PostMapping
     public ResponseEntity<Usuario> saveUsuario(@Valid @RequestBody Usuario usuario){
+        if(usuario == null){
+            System.out.println("[" + java.time.LocalDateTime.now() + "] " + "Error al guardar usuario: Datos de usuario no proporcionados");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }else{
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.saveUsuario(usuario));
+        }
     }
     
     @GetMapping("/{id}")
     public ResponseEntity<Usuario_DTO> getUsuarioById(@PathVariable int id){
+        
         Usuario usuario = usuarioService.getUsuarioId(id);
         if(usuario == null){
+            System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(usuarioService.getUsuarioById(id));
@@ -51,15 +64,22 @@ public class UsuarioController {
         usuario.setIdUsuario(id);
         Usuario usuarioActualizado = usuarioService.updateUsuario(usuario);
         if (usuarioActualizado == null) {
+            System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
             return ResponseEntity.notFound().build();
+        }else{
+            return ResponseEntity.ok(usuarioActualizado);
         }
-        return ResponseEntity.ok(usuarioActualizado);
     }
     
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUsuario(@PathVariable int id) {
+        if(usuarioService.getUsuarioId(id) == null){
+             System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
+             return ResponseEntity.notFound().build();
+        }else{
         usuarioService.deleteUsuario(id);
         return ResponseEntity.noContent().build();
+        }
     }
 
     @GetMapping("/username/{username}")
