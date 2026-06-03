@@ -33,7 +33,7 @@ public class SerieController {
 
         if(series.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] " + "No se encontraron series");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }else{
             return ResponseEntity.ok(serieService.getSeries());
         }

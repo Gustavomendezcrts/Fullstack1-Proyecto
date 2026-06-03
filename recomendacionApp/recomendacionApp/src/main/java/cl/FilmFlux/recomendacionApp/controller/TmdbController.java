@@ -30,11 +30,8 @@ public class TmdbController {
             response.add("Status: Encontrado");
             return ResponseEntity.ok(response);
         } else {
-            response.add("ID: " + imdbCode);
-            response.add("Poster: No encontrado");
-            response.add("Status: No encontrado");
-            response.add("Error: No se encontró el póster para el código proporcionado.");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
+            System.out.println("[" + LocalDateTime.now() + "] " + "Error al Buscar en TMDb: Imdb ID no encontrado");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
     }
 }

@@ -32,7 +32,7 @@ public class UsuarioController {
         List<Usuario_DTO> usuarios = usuarioService.getUsuarios();
         if(usuarios.isEmpty()){
             System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontraron usuarios");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }else{
             return ResponseEntity.ok(usuarioService.getUsuarios());
         }
@@ -54,7 +54,7 @@ public class UsuarioController {
         Usuario usuario = usuarioService.getUsuarioId(id);
         if(usuario == null){
             System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(usuarioService.getUsuarioById(id));
     }
@@ -65,7 +65,7 @@ public class UsuarioController {
         Usuario usuarioActualizado = usuarioService.updateUsuario(usuario);
         if (usuarioActualizado == null) {
             System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.noContent().build();
         }else{
             return ResponseEntity.ok(usuarioActualizado);
         }
@@ -75,7 +75,7 @@ public class UsuarioController {
     public ResponseEntity<Void> deleteUsuario(@PathVariable int id) {
         if(usuarioService.getUsuarioId(id) == null){
              System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
-             return ResponseEntity.notFound().build();
+             return ResponseEntity.noContent().build();
         }else{
         usuarioService.deleteUsuario(id);
         return ResponseEntity.noContent().build();
@@ -86,7 +86,8 @@ public class UsuarioController {
     public ResponseEntity<Usuario_DTO> getUsuarioByUsername(@PathVariable String username){
         Usuario_DTO usuario = usuarioService.getUsuarioByUsername(username);
         if(usuario == null){
-            return ResponseEntity.notFound().build();
+            System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario: " + username);
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(usuarioService.getUsuarioByUsername(username));
     }

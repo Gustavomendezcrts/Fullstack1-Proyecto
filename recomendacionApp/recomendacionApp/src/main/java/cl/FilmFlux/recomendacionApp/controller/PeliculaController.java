@@ -33,7 +33,7 @@ public class PeliculaController {
 
         if(peliculas.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] " + "No se encontraron peliculas");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }else{
             return ResponseEntity.ok(peliculaService.getPeliculas());
         }
@@ -45,7 +45,7 @@ public class PeliculaController {
 
         if(peliculasByGenero.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] " + "No se encontraron peliculas para el genero: " + genero);
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }else{
             return ResponseEntity.ok(peliculaService.getPeliculasByGenero(genero));
         }
@@ -70,7 +70,7 @@ public class PeliculaController {
             peli.setIdPelicula(id);
             Pelicula peliActualizada = peliculaService.updatePelicula(peli);
             if (peliActualizada == null) {
-                return ResponseEntity.notFound().build();
+                return ResponseEntity.badRequest().build();
             }
             return ResponseEntity.ok(peliActualizada);
         }

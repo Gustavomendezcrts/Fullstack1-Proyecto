@@ -34,7 +34,7 @@ public class ResenaController {
 
         if(resenas.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] No se encontraron reseñas");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
 
         return ResponseEntity.ok(resenas);
@@ -59,7 +59,8 @@ public class ResenaController {
     public ResponseEntity<Resena> getResena(@PathVariable int id){
         Resena resena = resenaService.getResenaId(id);
         if(resena == null){
-            return ResponseEntity.notFound().build();
+            System.out.println("[" + LocalDateTime.now() + "] No se encontro la reseña");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
         return ResponseEntity.ok(resena);
     }
@@ -95,7 +96,7 @@ public class ResenaController {
         List<Resena_DTO> resenas = resenaService.getResenasByUsuario(id);
         if(resenas.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] No se encontraron reseñas para el usuario ID: " + id);
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(resenas);
     }
@@ -105,7 +106,7 @@ public class ResenaController {
         List<Resena_DTO> resenas = resenaService.getResenasByPelicula(id);
         if(resenas.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] No se encontraron reseñas para la película ID: " + id);
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(resenas);
     }
@@ -115,7 +116,7 @@ public class ResenaController {
         List<Resena_DTO> resenas = resenaService.getResenasBySerie(id);
         if(resenas.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] No se encontraron reseñas para la serie ID: " + id);
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(resenas);
     }
