@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.FilmFlux.recomendacionApp.model.Pelicula;
 import cl.FilmFlux.recomendacionApp.model.Serie;
 import cl.FilmFlux.recomendacionApp.service.SerieService;
 import jakarta.validation.Valid;
@@ -34,7 +33,7 @@ public class SerieController {
 
         if(series.isEmpty()){
             System.out.println("[" + LocalDateTime.now() + "] " + "No se encontraron series");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }else{
             return ResponseEntity.ok(serieService.getSeries());
         }
