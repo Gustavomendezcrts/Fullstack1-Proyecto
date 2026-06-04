@@ -32,7 +32,7 @@ public class Resena {
     @NotNull
     @ManyToOne(optional = false)
     @JoinColumn(name = "idUsuario", nullable = false)
-    private Usuario usuario;
+    private UsuarioPagina usuario;
 
     @ManyToOne(optional = true)
     @JoinColumn(name = "idPelicula")

@@ -6,14 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cl.FilmFlux.recomendacionApp.repository.UsuarioRepository;
-import cl.FilmFlux.recomendacionApp.model.Usuario;
+import cl.FilmFlux.recomendacionApp.repository.UsuarioPaginaRepository;
+import cl.FilmFlux.recomendacionApp.model.UsuarioPagina;
 import cl.FilmFlux.recomendacionApp.DTO.Usuario_DTO;
 
 @Service
 public class UsuarioService {
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private UsuarioPaginaRepository usuarioRepository;
 
     public List<Usuario_DTO> getUsuarios(){
         try{
@@ -34,7 +34,7 @@ public class UsuarioService {
     public Usuario_DTO getUsuarioById(int id){
         try{
             System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo a usuario | ID: " + id);
-            Usuario user = usuarioRepository.findById(id).orElse(null);
+            UsuarioPagina user = usuarioRepository.findById(id).orElse(null);
             return new Usuario_DTO(
                 user.getNombre(),
                 user.getGustoPrincipal(),
@@ -46,7 +46,7 @@ public class UsuarioService {
         }
     }
 
-    public Usuario saveUsuario(Usuario user){
+    public UsuarioPagina saveUsuario(UsuarioPagina user){
         try{
             System.out.println("[" + LocalDateTime.now() + "] " + "Guardando usuario: " + user.getNombre());
             return usuarioRepository.save(user);
@@ -57,7 +57,7 @@ public class UsuarioService {
     }
 
     // se usa este metodo para poder buscar al usuario
-    public Usuario getUsuarioId(int id){
+    public UsuarioPagina getUsuarioId(int id){
         try{
             System.out.println("[" + LocalDateTime.now() + "] " + "Trayendo a usuario | ID: " + id);
             return usuarioRepository.findById(id).orElse(null);
@@ -67,7 +67,7 @@ public class UsuarioService {
         }   
     }
 
-    public Usuario updateUsuario(Usuario user){
+    public UsuarioPagina updateUsuario(UsuarioPagina user){
         try{
             System.out.println("[" + LocalDateTime.now() + "] " + "Actualizando a usuario | ID: " + user.getIdUsuario());
             if(!usuarioRepository.existsById(user.getIdUsuario())){
@@ -92,7 +92,7 @@ public class UsuarioService {
     public Usuario_DTO getUsuarioByUsername(String username){
         try{
             System.out.println("[" + LocalDateTime.now() + "] " + "Buscando usuario: " + username);
-            Usuario user = usuarioRepository.findByNombre(username);
+            UsuarioPagina user = usuarioRepository.findByNombre(username);
             if(user != null){
                 System.out.println("[" + LocalDateTime.now() + "] " + "Usuario encontrado: " + user.getIdUsuario());
                 return new Usuario_DTO(

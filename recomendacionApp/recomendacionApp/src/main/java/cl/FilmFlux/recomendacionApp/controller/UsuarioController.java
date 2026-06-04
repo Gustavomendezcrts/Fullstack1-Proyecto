@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.FilmFlux.recomendacionApp.DTO.Usuario_DTO;
-import cl.FilmFlux.recomendacionApp.model.Usuario;
+import cl.FilmFlux.recomendacionApp.model.UsuarioPagina;
 import cl.FilmFlux.recomendacionApp.service.UsuarioService;
 import jakarta.validation.Valid;
 
@@ -39,7 +39,7 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<Usuario> saveUsuario(@Valid @RequestBody Usuario usuario){
+    public ResponseEntity<UsuarioPagina> saveUsuario(@Valid @RequestBody UsuarioPagina usuario){
         if(usuario == null){
             System.out.println("[" + java.time.LocalDateTime.now() + "] " + "Error al guardar usuario: Datos de usuario no proporcionados");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -51,7 +51,7 @@ public class UsuarioController {
     @GetMapping("/{id}")
     public ResponseEntity<Usuario_DTO> getUsuarioById(@PathVariable int id){
         
-        Usuario usuario = usuarioService.getUsuarioId(id);
+        UsuarioPagina usuario = usuarioService.getUsuarioId(id);
         if(usuario == null){
             System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
             return ResponseEntity.noContent().build();
@@ -60,9 +60,9 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Usuario> actualizarUsuario(@PathVariable int id, @Valid @RequestBody Usuario usuario) {
+    public ResponseEntity<UsuarioPagina> actualizarUsuario(@PathVariable int id, @Valid @RequestBody UsuarioPagina usuario) {
         usuario.setIdUsuario(id);
-        Usuario usuarioActualizado = usuarioService.updateUsuario(usuario);
+        UsuarioPagina usuarioActualizado = usuarioService.updateUsuario(usuario);
         if (usuarioActualizado == null) {
             System.out.println("[" + java.time.LocalDateTime.now() + "] " + "No se encontró usuario con ID: " + id);
             return ResponseEntity.noContent().build();

@@ -8,10 +8,81 @@
   },
   "item": [
     {
-      "name": "Ver Peliculas",
+      "name": "Registrar ususario api",
       "request": {
         "auth": {
           "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\" : \"tomas\",\r\n    \"password\" : \"pene\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/auth/register",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login ususario api",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\" : \"tomas\",\r\n    \"password\" : \"pene\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseurl}}/api/v1/auth/login",
+          "host": [
+            "{{baseurl}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver Peliculas",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
         },
         "method": "GET",
         "header": [],
@@ -33,7 +104,14 @@
       "name": "Agregar Pelicula",
       "request": {
         "auth": {
-          "type": "noauth"
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
         },
         "method": "POST",
         "header": [],
@@ -63,6 +141,16 @@
     {
       "name": "Actualizar Pelicula",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "PUT",
         "header": [],
         "body": {
@@ -92,6 +180,16 @@
     {
       "name": "Eliminar Pelicula",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "DELETE",
         "header": [],
         "url": {
@@ -112,6 +210,16 @@
     {
       "name": "Ver Serie",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
@@ -131,6 +239,16 @@
     {
       "name": "Cargar Serie",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [],
         "body": {
@@ -159,6 +277,16 @@
     {
       "name": "Actualizar Serie",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "PUT",
         "header": [],
         "body": {
@@ -188,6 +316,16 @@
     {
       "name": "Eliminar Serie",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "DELETE",
         "header": [],
         "url": {
@@ -209,7 +347,14 @@
       "name": "Ver Usuarios",
       "request": {
         "auth": {
-          "type": "noauth"
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
         },
         "method": "GET",
         "header": [],
@@ -231,7 +376,14 @@
       "name": "Agregar Usuarios",
       "request": {
         "auth": {
-          "type": "noauth"
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
         },
         "method": "POST",
         "header": [],
@@ -261,6 +413,16 @@
     {
       "name": "Actualizar usuario",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "PUT",
         "header": [],
         "body": {
@@ -290,6 +452,16 @@
     {
       "name": "Eliminar Usuario",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "DELETE",
         "header": [],
         "url": {
@@ -310,6 +482,16 @@
     {
       "name": "Ver Resena",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
@@ -329,11 +511,21 @@
     {
       "name": "Cargar Resena",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"puntaje\": 7,\r\n    \"comentario\": \"test Percy Jackson\",\r\n    \"usuario\": {\"id_usuario\": 1},\r\n    \"serie\": {\"id_serie\": 1}\r\n}",
+          "raw": "{\r\n    \"puntaje\": 7,\r\n    \"comentario\": \"test HAPO\",\r\n    \"usuario\": {\"idUsuario\": 1},\r\n    \"pelicula\": {\"idPelicula\": 1}\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -357,6 +549,16 @@
     {
       "name": "Actualizar Resena",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "PUT",
         "header": [],
         "body": {
@@ -386,6 +588,16 @@
     {
       "name": "Eliminar Resena",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "DELETE",
         "header": [],
         "url": {
@@ -406,6 +618,16 @@
     {
       "name": "Buscar Portada TMBd Api",
       "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{token}}",
+              "type": "string"
+            }
+          ]
+        },
         "method": "GET",
         "header": [],
         "url": {
@@ -427,6 +649,10 @@
   "variable": [
     {
       "key": "baseurl",
+      "value": ""
+    },
+    {
+      "key": "token",
       "value": ""
     }
   ]
