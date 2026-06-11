@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
-import java.sql.Date;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,6 +15,7 @@ import cl.FilmFlux.recomendacionApp.controller.UsuarioController;
 import cl.FilmFlux.recomendacionApp.service.UsuarioService;
 import cl.FilmFlux.recomendacionApp.model.UsuarioPagina;
 
+@ExtendWith(MockitoExtension.class)
 public class UsuarioPaginaControllerTest {
     
     @Mock
@@ -39,7 +38,7 @@ public class UsuarioPaginaControllerTest {
         
         when(usuarioService.saveUsuario(usuario)).thenReturn(usuario);
 
-        var respuesta = usuarioService.saveUsuario(usuario);
+        var respuesta = usuarioController.saveUsuario(usuario);
 
         assertNotNull(respuesta);
 
@@ -48,6 +47,6 @@ public class UsuarioPaginaControllerTest {
         var body = respuesta.getBody();
         assertNotNull(body);
 
-        assertEquals("One Piece Film: Red", body.getTitulo());
+        assertEquals("Tomas Martinez", body.getNombre());
     }
 }
